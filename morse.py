@@ -36,10 +36,29 @@ def encrypt(zprava):
         else:
             text += ' '
     return text
+def decrypt(zprava):
+    text = ' '
+    zprava += ' '
+    desifrovat = ''
+    citext = ''
+    for pismeno in zprava:
+        if (letter != ' '):
+            i = 0
+            citext += letter
+        else:
+            if i == 2 :
+                decipher += ' '
+            else:
+                decipher += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(citext)]
+                citext = ''
+  return decipher
 
 def main():
     result = encrypt(zprava.upper())
     print (result)
 
+    result = decipher(zprava)
+    print (result)
+    
 if __name__ == '__main__':
     main()
